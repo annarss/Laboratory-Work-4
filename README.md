@@ -50,7 +50,7 @@ This bar chart translates the complex numerical table of the classification repo
 
 
 **Description:**
-
+The Grad-CAM Heatmap provides a visual representation of the final convolutional layer's activations, highlighting the specific "features" the model prioritized. The color intensity indicates importance, with yellow and green regions showing high-impact areas that drove the model's final classification decision for the input image.
 
 ---
 
@@ -59,7 +59,7 @@ This bar chart translates the complex numerical table of the classification repo
 
 
 **Description:**
-
+The Grad-CAM Overlay merges the raw heatmap with the original image of the Peace Lily to provide spatial context. This visualization confirms that the model is correctly focusing on the plant's unique botanical structures, such as the white spathe and central spadix, rather than irrelevant background elements.
 
 ---
 ### Grad-CAM Interpretation 
