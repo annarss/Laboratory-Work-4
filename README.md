@@ -10,7 +10,7 @@
 <img width="447" height="425" alt="image" src="https://github.com/user-attachments/assets/5e4aba99-6ec1-4b35-b069-99e7040175de" />
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -19,7 +19,7 @@
 <img width="765" height="666" alt="image" src="https://github.com/user-attachments/assets/0a598c21-29b4-44c8-821e-3a02aeb4655d" />
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -28,7 +28,7 @@
 <img width="712" height="605" alt="image" src="https://github.com/user-attachments/assets/7d7e4229-dd55-4a61-af4c-f18bca964a48" />
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -37,7 +37,7 @@
 <img width="1003" height="507" alt="image" src="https://github.com/user-attachments/assets/8ca645d5-a4d8-40d9-8505-f4d6a3bae226" />
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -49,7 +49,7 @@
 <img width="362" height="355" alt="image" src="https://github.com/user-attachments/assets/291dd053-1849-4191-a980-688d28f065c3" />
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -58,13 +58,13 @@
 <img width="337" height="357" alt="image" src="https://github.com/user-attachments/assets/a5ecd8ba-725e-4f1f-97b5-8b45d3c7f626" />
 
 
-**Descrition:**
+**Description:**
 
 
 ---
 ### Grad-CAM Interpretation 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -75,7 +75,7 @@
 ### 7. Train Improved Model (20 epochs)
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -83,7 +83,7 @@
 ### 8. Improved Classification Report
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -91,7 +91,7 @@
 ### 9. Improved Confusion Matrix
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -99,7 +99,7 @@
 ### 10. Improved (ROC) Curve and Area Under the Curve (AUC) Score
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -107,7 +107,7 @@
 ### 11. Improved Precision, Recall, F1-score per Class
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -115,7 +115,7 @@
 ### Compare Results (Before vs After)
 
 
-**Descrition:**
+**Description:**
 
 
 ---
@@ -123,7 +123,7 @@
 ### 12. Visualization of Improvement
 
 
-**Descrition:**
+**Description:**
 
 
 ---
