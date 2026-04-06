@@ -145,40 +145,55 @@ From the Accuracy plot, we can see that the validation accuracy remains higher t
 ---
 
 ## 12. GUIDE QUESTIONS
+
 **A. Model Evaluation Analysis**
-**1. What were the weakest-performing classes based on the confusion matrix?**
+
+**1. What were the weakest-performing classes based on the confusion matrix?**<br>
 From the classification report, the poorest-performing classes are those of philodendron_xanadu, with a precision of 44% and an F1-score of 56%, alocasia, with a precision of 57% and an F1-score of 62%, and areca_palm, with a precision of 57% and an F1-score of 60%.
-**2. How did Precision, Recall, and F1-score vary across classes?** 
+
+**2. How did Precision, Recall, and F1-score vary across classes?**<br>
 The disparity between the top-performing groups and those that underperformed was huge. Boston fern was the highest, scoring perfect marks of 1.00 for each of the measures, followed by caladium with 0.97-0.98, and anthurium red champion with 0.96. In the bottom bracket, philodendron xanadu had a precision of just 0.44 while alocasia registered a precision of 0.57.
-**3. What does a low recall indicate in your model?** 
+
+**3. What does a low recall indicate in your model?** <br>
 If the recall value is low, this means that the model missed true cases of the particular class, meaning it did not recognize all of the true corn plant examples. Corn_plant had a recall of 0.68, which means that the model incorrectly recognized around 32% of the true cases. In an app used for identifying plants, the user who has a corn plant will most likely receive a wrong output about one-third of the time.
-**4. How does AUC score reflect model performance compared to accuracy?** 
+
+**4. How does AUC score reflect model performance compared to accuracy?** <br>
 While our initial model had 77% accuracy and an AUC of 0.9528, which was extremely high compared to the former, it was important to take into consideration the fact that AUC gives us more information about the performance of the model than accuracy, because unlike the latter, AUC shows us the quality of ranking of the true classes above other classes, regardless of whether the final decision on which one is correct was made accurately.
 
 **B. Model Improvement**
-**5. How did data augmentation affect validation accuracy?** 
+
+**5. How did data augmentation affect validation accuracy?** <br>
 The new version of the model had more robust data augmentation techniques such as horizontal and vertical flipping, rotation by 20%, zooming by 20%, and contrast change. The training outcomes show that the model’s accuracy rose from 14.75% at Epoch 1 to 70.50% at Epoch 20. Data augmentation initially slowed down the training process, making it difficult for the model, but eventually, it benefited the entire learning process up to Epoch 20.
-**6. Why is Batch Normalization important in CNNs?** 
+
+**6. Why is Batch Normalization important in CNNs?** <br>
 Batch normalization helps normalize the output from each layer so that the output does not become excessively large or small. In the modified model, batch normalization is included after each Conv2D layer. It helped stabilize the training process, allowing us to observe consistent improvements from epoch to epoch instead of stagnation or instability. Without it, the excessively high validation loss of 8.23 recorded in Epoch 1 would have been able to destabilize training.
-**7. What role did Dropout play in improving your model?** 
+
+**7. What role did Dropout play in improving your model?** <br>
 Two dropout layers were employed during the design of the architecture; 0.4 was used immediately after the convolutional layers and 0.5 was applied to the Dense(256). This ensured that there would be no over-reliance on certain neurons during the training process. In terms of performance, the training accuracy was 55.66% for epoch 20, whereas the validation accuracy was 70.50%, indicating that the higher validation accuracy than the training accuracy suggested effective use of dropout.
-**8. How did Early Stopping prevent overfitting?**
+
+**8. How did Early Stopping prevent overfitting?**<br>
 Early stopping monitored the validation loss with patience 3, which means the training process would be stopped if there was no improvement in the validation loss for three continuous epochs. Our result indicated that our model trained for all the 20 epochs since the validation loss improved continuously throughout the entire training process. Without the early stopping technique, the model could train beyond its optimal point even if it had overfitted.
  
 **C. Performance Comparison**
-**9. What improvements were observed after modifying the model?**
+
+**9. What improvements were observed after modifying the model?**<br>
 Strangely enough, the modified model performed worse on some parameters compared to the baseline. In terms of validation accuracy, the baseline obtained 77% whereas the improved one reached only 70.50%. In terms of precision, the baseline was 0.7935 while the improved model was 0.7129. Nevertheless, what the improved model demonstrates is a more balanced approach during the training process, with the training accuracy being 55.66% and validation accuracy 70.50%, which makes overfitting impossible.
-**10. Which enhancement contributed the most to performance improvement? Why?**
+
+**10. Which enhancement contributed the most to performance improvement? Why?**<br>
 The most valuable contribution was Batch Normalization due to its stabilization of the model for the whole duration of 20 epochs. The reason behind it was that without Batch Normalization, the validation loss value of Epoch 1 was 8.23 which is highly unstable. Another contributing factor was lowering the learning rate to 0.0001.
-**11. Did the gap between training and validation accuracy decrease? Explain.** 
+
+**11. Did the gap between training and validation accuracy decrease? Explain.** <br>
 Yes and it actually reversed. The baseline had training accuracy of 96.17% vs validation of 74.53%, a gap of about 21% showing severe overfitting. The improved model had training accuracy of 55.66% and validation accuracy of 70.50%, validation is actually 14.84% higher than training. This means the improved model has zero overfitting and is generalizing very well to unseen data.
 
 **D. Explainability (Grad-CAM Integration)**
-**12. How did Grad-CAM help in understanding model predictions?**
+
+**12. How did Grad-CAM help in understanding model predictions?**<br>
 The Grad-CAM helped us know exactly which parts of the plant image were of importance for the model to come up with its decisions. On applying the algorithm to our image, it made a prediction of "croton(mammy)" with a 50.95% confidence, and also gave the areas on the leaves that led to such a conclusion. If not for using the Grad-CAM, all we would know is just the figure of the prediction probability.
-**13. Did the improved model focus on more relevant regions? Provide evidence.**
+
+**13. Did the improved model focus on more relevant regions? Provide evidence.**<br>
 The enhanced model achieved a prediction accuracy of 69.25% for croton_petra, while the initial one only predicted croton(mammy) with an accuracy of 50.95%. This indicates that the enhanced model is better able to detect important features in its prediction process. The two plant types are very similar in appearance, and the enhanced model’s greater ability to differentiate between them implies more effective feature recognition.
-**14. Why is explainability important in real-world AI applications?**
+
+**14. Why is explainability important in real-world AI applications?**<br>
 In any practical plant detection application, the user should be able to trust the results. Should the neural network say that a plant is a snake plant, while Grad-CAM tells us that it was focused on the background behind it, then we can safely assume that the algorithm is untrustworthy. The ability to understand how a model makes decisions also allows us to correct issues when it comes to developing such models; for example, when the model starts to focus on the background rather than the leaf itself.
 
 ---
